@@ -28,7 +28,7 @@ function Navbar({ location,getLocation, openDropdown, setOpenDropdown }) {
                     <FaCaretDown onClick={toggleDropdown}/>                  
                 </div>
                  {
-                        openDropdown ? <div className='w-52 h-max shadow-2x1 z-50 bg-white fixed top-16 left-60 border-2 p-4 border-gray-100 rounded-md'>
+                        openDropdown ? <div className='w-52 h-max shadow-2xl z-50 bg-white fixed top-16 left-60 border-2 p-4 border-gray-100 rounded-md'>
                             <p className='font-semibold text-lg flex justify-between items-center'>Change Location <span onClick={toggleDropdown}><CgClose /></span></p>
                             <button onClick={getLocation} className='bg-blue-700 text-white p-1 rounded-md cursor-pointer hover:bg-blue-500 mt-2'>Detect My Location</button>
                         </div>
@@ -43,8 +43,8 @@ function Navbar({ location,getLocation, openDropdown, setOpenDropdown }) {
                     <NavLink to={'/contact'} className={({isActive}) => `${isActive ? "border-b-3 transition-all border-blue-700":"text-black"} cursor-pointer`}><li>Contact</li></NavLink>
                 </ul>
                 <Link to={'/cart'} className='relative ml-7'>
-                    <IoCartOutline className='h-7 w-7 cursor-pointer text-gray-700' />   
-                    <span className=' bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white'>0</span> 
+                    <IoCartOutline className='h-7 w-7 cursor-pointer text-gray-700' />
+                    <span className='bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white'>0</span>
                 </Link>
                 <div className='ml-7'>
                     <SignedOut>

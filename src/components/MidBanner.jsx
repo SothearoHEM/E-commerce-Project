@@ -1,20 +1,33 @@
-import React from 'react'
-import banner from '../assets/banner1.jpg'
+import React from 'react';
+import banner from '../assets/banner1.jpg'; // Update this image to a fashion/tech combo if possible!
 
 const MidBanner = () => {
   return (
-    <div className='bg-gray-100 md:py-24'>
-      <div className='relative max-w-7xl mx-auto md:rounded-2xl pt-28 bg-cover bg-center h-137.5 md:h-150 ' style={{backgroundImage: `url(${banner})`, backgroundPosition:'center', backgroundAttachment: 'fixed'}}>
-        <div className='absolute inset-0 bg-black/60 md:rounded-2xl bg-opacity-50 flex items-center justify-center'>
-            <div className='text-center text-white px-4'>
-                <h1 className='text-3xl md:text-5xl lg:text-6xl font-bold mb-4'>Next-Gen Shopping at Your Fingertips</h1>
-                <p className='text-lg md:text-xl mb-6'>Discover the latest tech innovations with unbeatable prices and free shipping on all orders.</p>
-                <button className='bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 md:py-3 md:px-6 rounded-lg transition duration-300'>Shop Now</button>
-            </div>
+    <div className='bg-gray-100 py-12 md:py-24'>
+      <div
+        className='relative max-w-7xl mx-auto md:rounded-3xl overflow-hidden bg-cover bg-center h-125 md:h-162.5'
+        style={{
+          backgroundImage: `url(${banner})`,
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        <div className='absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/70 flex items-center justify-center'>
+          <div className='text-center text-white px-6 max-w-4xl'>
+            <h1 className='text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight'>
+              Style Meets Innovation
+            </h1>
+            <p className='text-lg md:text-2xl mb-8 font-light opacity-90'>
+              Explore trendy men's & women's fashion, stunning jewelry, and the latest electronics — all in one place with amazing deals!
+            </p>
+            <button className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-xl text-lg md:text-xl transition duration-300 shadow-lg transform hover:scale-105'>
+              Shop Now
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MidBanner
+export default MidBanner;

@@ -20,9 +20,11 @@ function Product() {
 
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
+    setPage(1)
   }
   const handlePriceRangeChange = (e) => {
     setPriceRange([priceRange[0], Number(e.target.value)]);
+    setPage(1);
   }
   const filterData = data?.filter((item)=>{
     const matchesSearch = item.title.toLowerCase().includes(search.toLowerCase());
@@ -46,7 +48,7 @@ function Product() {
               handleCategoryChange={handleCategoryChange} handlePriceRangeChange={handlePriceRangeChange} />
               {
                 filterData?.length === 0 ? (
-                  <div className=' flex w-full h-125'> 
+                  <div className='flex w-full h-125'> 
                     <Lottie animationData={empty} loop={true} className='w-full h-full'/>
                   </div>
                 ):
@@ -63,7 +65,7 @@ function Product() {
 
             </div>          
           ):(
-            <div className=' flex items-center justify-center h-125 mx-auto'>
+            <div className='flex items-center justify-center h-125 mx-auto'>
                   <Lottie animationData={loading} loop={true} className='w-40 h-40'/>
 
             </div>

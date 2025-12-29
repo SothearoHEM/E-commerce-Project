@@ -20,7 +20,7 @@ function FilterSection({search, setSearch, category, setCategory, priceRange, se
                 })
             }
         </div>
-        <h1 className='mt-5 mb-2 font-semibold'>Price Rang</h1>
+        <h1 className='mt-5 mb-2 font-semibold'>Price Range</h1>
         <div className='flex flex-col gap-2'>
             <label htmlFor="">Price: ${priceRange[0]} - ${priceRange[1]}</label>
             <input type="range" min="0" max="1000" className='w-full' value={priceRange[1]} onChange={handlePriceRangeChange} />
