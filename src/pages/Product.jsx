@@ -1,9 +1,11 @@
 import React, { useEffect,useState } from 'react'
 import { getData } from '../context/DataContext';
 import FilterSection from '../components/FilterSection.jsx';
-import loading from '../assets/loading.webm';
+import loading from '../assets/loading.json';
 import ProductCard from '../components/ProductCard.jsx';
 import Pagination from '../components/Pagination.jsx';
+import empty from '../assets/empty.json';
+import Lottie from 'lottie-react';
 
 function Product() {
   const {data, fetchData} = getData();
@@ -31,6 +33,9 @@ function Product() {
   const pageHandler = (selectedPage) => {
     setPage(selectedPage);
   }
+  const dynamicPage = Math.ceil(filterData?.length / 8);
+
+
   return (
     <div>
       <div className='max-w-7xl mx-auto px-4 mb-10'>
@@ -39,7 +44,13 @@ function Product() {
             <div className='flex gap-8'>
               <FilterSection search={search} setSearch={setSearch} category={category} setCategory={setCategory} priceRange={priceRange} setPriceRange={setPriceRange} 
               handleCategoryChange={handleCategoryChange} handlePriceRangeChange={handlePriceRangeChange} />
-              <div className='grid grid-cols-4 gap-7 mt-10'>
+              {
+                filterData?.length === 0 ? (
+                  <div className=' flex w-full h-125'> 
+                    <Lottie animationData={empty} loop={true} className='w-full h-full'/>
+                  </div>
+                ):
+                <div className='grid grid-cols-4 gap-7 mt-10 w-full'>
                 {
                   filterData?.slice(page*8-8, page*8).map((product,index)=>{
                     return(
@@ -47,17 +58,18 @@ function Product() {
                     )
                   })
                 }
-              </div>
+              </div>            
+              }
+
             </div>          
           ):(
-            <div className=' flex items-center justify-center h-screen mx-auto'>
-                <video muted autoPlay loop className='w-20 h-20'>
-                  <source src={loading} type="video/webm" />
-                </video>
+            <div className=' flex items-center justify-center h-125 mx-auto'>
+                  <Lottie animationData={loading} loop={true} className='w-40 h-40'/>
+
             </div>
           )
         }
-        <Pagination page={page} pageHandler={pageHandler} />
+        <Pagination page={page} pageHandler={pageHandler} dynamicPage={dynamicPage} />
       </div>
     </div>
   )
