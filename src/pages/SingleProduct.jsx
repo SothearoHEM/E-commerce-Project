@@ -34,12 +34,12 @@ function SingleProduct() {
     SingleProduct ? 
     <div className='px-4 pb-4 md:0'>
         <Breadcrums title={SingleProduct.title} />
-        <div className='max-w-7xl mx-auto md:p-6 grid grid-cols-2 gap-10'>
+        <div className='max-w-7xl mx-auto md:p-6 grid md:grid-cols-2 grid-cols-1 gap-10'>
             <div className='w-full'>
-                <img src={SingleProduct.image} alt={SingleProduct.title} className='w-full h-96 object-contain'/>
+                <img src={SingleProduct.image} alt={SingleProduct.title} className='w-full md:h-96 h-50 object-contain'/>
             </div>
             <div className='w-full'>
-                <h1 className='text-3xl font-semibold mb-4'>{SingleProduct.title}</h1>
+                <h1 className='md:text-3xl text-xl font-semibold mb-4'>{SingleProduct.title}</h1>
                 <p className='text-gray-700'>{SingleProduct.category.toUpperCase()}</p>
                 <p className='text-xl font-semibold text-blue-700 my-4'>$ {SingleProduct.price} 
                     <span className='text-gray-500 line-through ml-2'>$ {OriginalPrice}</span>

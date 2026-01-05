@@ -6,6 +6,7 @@ import ProductCard from '../components/ProductCard.jsx';
 import Pagination from '../components/Pagination.jsx';
 import empty from '../assets/empty.json';
 import Lottie from 'lottie-react';
+import MobileFilter from '../components/MobileFilter.jsx';
 
 function Product() {
   const {data, fetchData} = getData();
@@ -13,6 +14,7 @@ function Product() {
   const [category, setCategory] = useState('All');
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [page, setPage] = useState(1);
+  const [openMobileFilter, setOpenMobileFilter] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -35,6 +37,7 @@ function Product() {
   });
   const pageHandler = (selectedPage) => {
     setPage(selectedPage);
+    window.scrollTo(0, 0);
   }
   const dynamicPage = Math.ceil(filterData?.length / 8);
 
@@ -42,6 +45,9 @@ function Product() {
   return (
     <div>
       <div className='max-w-7xl mx-auto px-4 mb-10'>
+        <MobileFilter openMobileFilter={openMobileFilter} setOpenMobileFilter={setOpenMobileFilter} search={search} setSearch={setSearch} category={category} 
+            setCategory={setCategory} priceRange={priceRange} setPriceRange={setPriceRange} 
+            handleCategoryChange={handleCategoryChange} handlePriceRangeChange={handlePriceRangeChange}/>
         {
           data?.length > 0 ? (
             <div className='flex gap-8'>
@@ -53,7 +59,7 @@ function Product() {
                     <Lottie animationData={empty} loop={true} className='w-full h-full'/>
                   </div>
                 ):
-                <div className='grid grid-cols-4 gap-7 mt-10 w-full'>
+                <div className='grid md:grid-cols-4 grid-cols-2 gap-7 mt-10 w-full'>
                 {
                   filterData?.slice(page*8-8, page*8).map((product,index)=>{
                     return(

@@ -4,7 +4,7 @@ import { getData } from '../context/DataContext';
 function FilterSection({search, setSearch, category, setCategory, priceRange, setPriceRange, handleCategoryChange, handlePriceRangeChange}) {
     const {catagoryOnlyData} = getData();
   return (
-    <div className=' w-80 bg-gray-100 p-4 rounded-md h-max mt-10 shadow-lg'>
+    <div className=' w-80 bg-gray-100 p-4 rounded-md h-max mt-10 shadow-lg md:block hidden'>
         <input type="text" placeholder="Search products..." onChange={(e)=>setSearch(e.target.value)} className="w-full p-2 rounded-md border border-gray-300" />
 
         <h1 className='mt-5 mb-2 font-semibold'>Category</h1>

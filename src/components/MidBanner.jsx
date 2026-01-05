@@ -1,7 +1,9 @@
 import React from 'react';
-import banner from '../assets/banner1.jpg'; // Update this image to a fashion/tech combo if possible!
+import banner from '../assets/banner1.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const MidBanner = () => {
+  const navigate = useNavigate();
   return (
     <div className='bg-gray-100 py-12 md:py-24'>
       <div
@@ -20,7 +22,7 @@ const MidBanner = () => {
             <p className='text-lg md:text-2xl mb-8 font-light opacity-90'>
               Explore trendy men's & women's fashion, stunning jewelry, and the latest electronics — all in one place with amazing deals!
             </p>
-            <button className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-xl text-lg md:text-xl transition duration-300 shadow-lg transform hover:scale-105'>
+            <button onClick={() => navigate('/product')} className='bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-10 rounded-xl text-lg md:text-xl transition duration-300 shadow-lg transform hover:scale-105'>
               Shop Now
             </button>
           </div>

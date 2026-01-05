@@ -5,11 +5,11 @@ import Features from '../components/Features.jsx'
 
 function Home() {
   return ( 
-    <>
+    <div className='overflow-x-hidden'>
       <Carousel />
       <MidBanner />
       <Features />
-    </>
+    </div>
   )
 }
 
