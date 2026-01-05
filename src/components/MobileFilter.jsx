@@ -3,7 +3,7 @@ import { FaFilter } from 'react-icons/fa';
 import { getData } from '../context/DataContext';
 
 function MobileFilter({openMobileFilter, setOpenMobileFilter, search, setSearch, category, setCategory, priceRange, setPriceRange, handleCategoryChange, handlePriceRangeChange}) {
-    const {catagoryOnlyData} = getData();
+    const {categoryOnlyData} = getData();
     const toggleFilter = () => {
         setOpenMobileFilter(!openMobileFilter);
     }
@@ -18,7 +18,7 @@ function MobileFilter({openMobileFilter, setOpenMobileFilter, search, setSearch,
                 <h1 className='mt-5 mb-2 font-semibold'>Category</h1>
                 <div className='flex flex-col gap-2 mt-3'>
                     {
-                        catagoryOnlyData?.map((item,index)=>{
+                        categoryOnlyData?.map((item,index)=>{
                             return(
                                 <div key={index} className='flex items-center gap-2'>
                                     <input type="checkbox" id={item} name={item} className='w-4 h-4' value={item} checked={category === item} onChange={handleCategoryChange} />

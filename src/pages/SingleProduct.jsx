@@ -1,4 +1,4 @@
-import React, { use } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
@@ -28,7 +28,8 @@ function SingleProduct() {
         getSingleProduct();
     }, []);
 
-    const OriginalPrice = Math.round(SingleProduct.price + (SingleProduct.price * SingleProduct.discount / 100));
+    const discount = SingleProduct?.rating?.count > 100 ? 15 : 10;
+    const OriginalPrice = Math.round(SingleProduct.price + (SingleProduct.price * discount / 100));
 
   return (
     SingleProduct ? 
@@ -43,7 +44,7 @@ function SingleProduct() {
                 <p className='text-gray-700'>{SingleProduct.category.toUpperCase()}</p>
                 <p className='text-xl font-semibold text-blue-700 my-4'>$ {SingleProduct.price} 
                     <span className='text-gray-500 line-through ml-2'>$ {OriginalPrice}</span>
-                    <span className='bg-blue-700 text-white px-2 rounded-md ml-2'>{SingleProduct.discount}% discount</span>
+                    <span className='bg-blue-700 text-white px-2 rounded-md ml-2'>{discount}% discount</span>
                 </p>
                 <p className='text-gray-600 mb-6'>{SingleProduct.description}</p>
                 <div className='flex gap-4 mt-4'>

@@ -29,8 +29,8 @@ export const DataProvider = ({children}) => {
             newVAL = ["All", ...new Set(newVAL)];
             return newVAL;
     }   
-    const catagoryOnlyData = getUniqueCategories(data,'category');
-    return <DataContext.Provider value={{data,setData,fetchData,getUniqueCategories,catagoryOnlyData}}>
+    const categoryOnlyData = getUniqueCategories(data,'category');
+    return <DataContext.Provider value={{data,setData,fetchData,getUniqueCategories,categoryOnlyData}}>
         {children}
     </DataContext.Provider>
 }

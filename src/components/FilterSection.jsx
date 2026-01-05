@@ -2,7 +2,7 @@ import React from 'react'
 import { getData } from '../context/DataContext';
 
 function FilterSection({search, setSearch, category, setCategory, priceRange, setPriceRange, handleCategoryChange, handlePriceRangeChange}) {
-    const {catagoryOnlyData} = getData();
+    const {categoryOnlyData} = getData();
   return (
     <div className=' w-80 bg-gray-100 p-4 rounded-md h-max mt-10 shadow-lg md:block hidden'>
         <input type="text" placeholder="Search products..." onChange={(e)=>setSearch(e.target.value)} className="w-full p-2 rounded-md border border-gray-300" />
@@ -10,7 +10,7 @@ function FilterSection({search, setSearch, category, setCategory, priceRange, se
         <h1 className='mt-5 mb-2 font-semibold'>Category</h1>
         <div className='flex flex-col gap-2 mt-3'>
             {
-                catagoryOnlyData?.map((item,index)=>{
+                categoryOnlyData?.map((item,index)=>{
                     return(
                         <div key={index} className='flex items-center gap-2'>
                             <input type="checkbox" id={item} name={item} className='w-4 h-4' value={item} checked={category === item} onChange={handleCategoryChange} />

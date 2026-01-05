@@ -5,12 +5,12 @@ import { useUser } from '@clerk/clerk-react';
 import emptyCart from '../assets/emptyCart.jpg';
 import { useNavigate } from 'react-router-dom';
 
-function Cart({location, getLocation}) {
+function Cart({location, getLocation,SingleProduct}) {
   const {cartItems, updateQuantity, deleteItem}=useCart();
   const {user} = useUser();
   const navigate=useNavigate();
-  const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const discount = 0;
+    const OriginalPrice= cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const totalPrice = OriginalPrice;
   return (
     <div className='mt-10 max-w-7xl mx-auto mb-5 overflow-hidden'>
         {
@@ -85,7 +85,7 @@ function Cart({location, getLocation}) {
                         <h1 className='text-gray-800 font-bold text-xl'>Bill Details</h1>
                         <div className='flex justify-between'>
                             <span className='text-gray-700'>Price ({cartItems.length} items)</span>
-                            <span className='font-bold text-gray-900'>$ {totalPrice.toFixed(2)}</span>
+                            <span className='font-bold text-gray-900'>$ {OriginalPrice.toFixed(2)}</span>
                         </div>
                         <div>
                             <div className='flex justify-between'>
@@ -102,17 +102,11 @@ function Cart({location, getLocation}) {
                         <div className='flex justify-between'>
                             <span className='text-gray-700'>Delivery Charges</span>
                             <span className='font-bold text-gray-900'>$ 5</span>
-                        </div>  
-                        <div>
-                            <div className='flex justify-between'>
-                                <span className='text-gray-700'>Discount</span>
-                                <span className='font-bold text-green-600'>$ {discount}</span>
-                            </div>
-                        </div>
+                        </div>         
                         <div className='border-b border-gray-300'></div>
                         <div className='flex justify-between'>
                             <span className='font-bold text-gray-800'>Total Amount</span>
-                            <span className='font-bold text-gray-900'>$ {(totalPrice + 5 - discount).toFixed(2)}</span>
+                            <span className='font-bold text-gray-900'>$ {(totalPrice + 5).toFixed(2)}</span>
                         </div>
                         <button className='bg-blue-500 text-white w-full px-4 py-2 rounded-md mt-4 hover:bg-blue-800'>Proceed to Pay</button>
                     </div>

@@ -1,5 +1,4 @@
 import { MapPin } from 'lucide-react'
-import './Navbar.css'
 import React ,{useState}from 'react'
 import { FaCaretDown } from 'react-icons/fa';
 import { IoCartOutline } from 'react-icons/io5';
