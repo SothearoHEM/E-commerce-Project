@@ -8,7 +8,7 @@ import { FaUserCircle } from 'react-icons/fa';
 function ResponsiveMenu({ openNav, setOpenNav }) {
     const {user}=useUser();
   return (
-    <div className={`${openNav ? 'left-0' : '-left-full'} flex buttom-0 top-0 w-2.5/4 h-full bg-white fixed z-50 flex-col transition-all duration-300 ease-in-out shadow-lg md:hidden`}>
+    <div className={`${openNav ? 'left-0' : '-left-full'} flex bottom-0 top-0 w-2.5/4 h-full bg-white fixed z-50 flex-col transition-all duration-300 ease-in-out shadow-lg md:hidden`}>
         <div>
             <div className='flex items-center justify-start gap-3 p-5'>
                 {

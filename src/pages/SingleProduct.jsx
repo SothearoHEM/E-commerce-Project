@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { use } from 'react'
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
 import axios from 'axios';
 import Lottie from 'lottie-react';
 import loading from '../assets/loading.json';
