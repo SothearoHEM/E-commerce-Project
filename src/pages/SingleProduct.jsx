@@ -1,4 +1,4 @@
-import React, { use } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Lottie from 'lottie-react';
