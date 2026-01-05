@@ -51,7 +51,7 @@ function Cart({location, getLocation}) {
                         </div>
                         <div className='flex flex-col space-y-1'>
                             <label htmlFor="" className='font-semibold text-gray-700'>Email Address</label>
-                            <input type="email" className='p-2 rounded-md border border-gray-300' placeholder='Enter Your Email Address' value={user.emailAddresses}/>
+                            <input type="email" className='p-2 rounded-md border border-gray-300' placeholder='Enter Your Email Address' value={user.emailAddresses[0].emailAddress}/>
                         </div>
                         <div className='flex flex-col space-y-1'>
                             <label htmlFor="" className='font-semibold text-gray-700'>Phone Number</label>
