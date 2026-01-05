@@ -6,12 +6,13 @@ import { IoCartOutline } from 'react-icons/io5';
 import { Link, NavLink } from 'react-router-dom'
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 import { CgClose } from 'react-icons/cg';
+import { useCart } from '../context/CartContext.jsx';
 
 function Navbar({ location,getLocation, openDropdown, setOpenDropdown }) {
     const toggleDropdown = () => {
         setOpenDropdown(!openDropdown);
     }
-
+    const {cartItems}=useCart();
   return (
     <div className='bg-white py-3 shadow-2xl'>
         <div className='max-w-7xl mx-auto flex justify-between items-center'>
@@ -44,7 +45,7 @@ function Navbar({ location,getLocation, openDropdown, setOpenDropdown }) {
                 </ul>
                 <Link to={'/cart'} className='relative ml-7'>
                     <IoCartOutline className='h-7 w-7 cursor-pointer text-gray-700' />
-                    <span className='bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white'>0</span>
+                    <span className='bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white'>{cartItems.length}</span>
                 </Link>
                 <div className='ml-7'>
                     <SignedOut>
