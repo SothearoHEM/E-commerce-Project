@@ -38,7 +38,7 @@ function Carousel() {
                       <button className='bg-linear-to-r from-blue-500 via-blue-600 to-blue-800 text-white px-4 py-2 rounded-md hover:scale-105' onClick={() => navigate(`/product/${item.id}`)}>Shop Now</button>
                   </div>
                   <div>
-                    <img src={item.image} alt={item.title} className='md:h-120 md:w-120 h-80 w-80 object-contain rounded-full bg-gray-300 shadow-2xl shadow-blue-400 hover:scale-105 transition-all duration-300 ease-in-out'/>
+                    <img src={item.image} alt={item.title} className='md:h-120 md:w-120 h-80 w-80 object-contain rounded-full bg-gray-100 shadow-2xl shadow-blue-400 hover:scale-105 transition-all duration-300 ease-in-out'/>
                   </div>
                 </div>
               </div>
