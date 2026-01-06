@@ -57,12 +57,12 @@ function Cart({location, getLocation}) {
                             <label htmlFor="" className='font-semibold text-gray-700'>Phone Number</label>
                             <input type="text" className='p-2 rounded-md border border-gray-300' placeholder='Enter Your Phone Number'/>
                         </div>
-                        <div className='flex w-full space-y-1'>
+                        <div className='md:flex flex-column w-full space-y-1'>
                             <div className='flex flex-col space-y-1 w-full'> 
                                 <label htmlFor="" className='font-semibold text-gray-700'>Country</label>
                                 <input type="text" className='p-2 rounded-md border border-gray-300' placeholder='Enter Your Country' value={location?.country} />
                             </div>
-                            <div className='flex flex-col ml-4 space-y-1 w-full'>
+                            <div className='flex flex-col md:ml-4 ml-0 space-y-1 w-full'>
                                 <label htmlFor="" className='font-semibold text-gray-700'>City</label>
                                 <input type="text" className='p-2 rounded-md border border-gray-300' placeholder='Enter Your City' value={location?.state}/>
                             </div>
