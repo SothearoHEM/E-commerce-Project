@@ -16,11 +16,11 @@ function Category() {
     }  
     const categories = getUniqueCategories(data, 'category');
   return (
-    <div className='mx-auto flex flex-wrap gap-4 items-center justify-around md:py-7 px-4 bg-[#0f0c29ec] py-10 '>
+    <div className='mx-auto flex flex-wrap gap-4 items-center justify-around md:py-7 px-4 bg-gray-900 py-10 '>
         {
             categories?.map((item,index)=>{
                 return(
-                    <div key={index} className='md:w-auto w-fit rounded-lg px-4 py-2 hover:scale-105 cursor-pointer transition-all duration-300 ease-in-out bg-linear-to-r from-blue-400 via-blue-500 to-blue-700 text-white'>
+                    <div key={index} className='md:w-auto w-fit rounded-lg px-4 py-2 hover:scale-105 cursor-pointer transition-all duration-300 ease-in-out bg-linear-to-r from-blue-500 via-blue-600 to-blue-800 text-white'>
                         <button className='uppercase' onClick={() => navigate(`/category/${item}`)}>{item}</button>
                     </div>
                 )
