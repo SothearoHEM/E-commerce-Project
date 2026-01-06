@@ -10,6 +10,7 @@ import axios from 'axios'
 import Footer from './components/Footer.jsx'
 import SingleProduct from './pages/SingleProduct.jsx'
 import CategoryProduct from './pages/CategoryProduct.jsx'
+import ProtectedRoute from './components/ProtectedRoute.jsx'
 
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
           <Route path='/product/:id' element={<SingleProduct />} />
           <Route path='/category/:category' element={<CategoryProduct />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/cart' element={<Cart location={location} getLocation={getLocation} />} />
+          <Route path='/cart' element={ <ProtectedRoute> <Cart location={location} getLocation={getLocation} /> </ProtectedRoute>} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -49,7 +49,7 @@ function Navbar({ location,getLocation, openDropdown, setOpenDropdown }) {
                     <IoCartOutline className='h-7 w-7 cursor-pointer text-gray-700' />
                     <span className='bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white'>{cartItems.length}</span>
                 </Link>
-                <div className='ml-7 hidden md:block'>
+                <div className='ml-7 block'>
                     <SignedOut>
                         <SignInButton className='signin-btn bg-blue-700 text-white px-2 py-1 rounded cursor-pointer'/>
                     </SignedOut>

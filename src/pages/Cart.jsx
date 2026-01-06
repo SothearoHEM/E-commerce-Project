@@ -5,7 +5,7 @@ import { useUser } from '@clerk/clerk-react';
 import emptyCart from '../assets/emptyCart.jpg';
 import { useNavigate } from 'react-router-dom';
 
-function Cart({location, getLocation,SingleProduct}) {
+function Cart({location, getLocation}) {
   const {cartItems, updateQuantity, deleteItem}=useCart();
   const {user} = useUser();
   const navigate=useNavigate();
